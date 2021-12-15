@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+	table,th,td {
+		border:1px solid black;
+		border-spacing:0px;
+	}
+	th,td {
+		padding:10px;
+	}
+</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>PNR Number</th>
+				<th>Class Type</th>
+				<th>Bank Name</th>
+				<th>Card Number</th>
+				<th>CVV</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th.each="paymentdetails : ${payDetails}">
+				<td ${paymentdetails.pnrNo}>
+				<td ${paymentdetails.classType}>
+				<td ${paymentdetails.BankName}>
+				<td ${paymentdetails.cardNo}>
+				<td ${paymentdetails.cvv}>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
