@@ -3,6 +3,7 @@ import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,7 @@ import com.booking.service.UserService;
 import io.swagger.annotations.ApiOperation;
 import com.booking.service.UserServiceImpl;
 
+@CrossOrigin("*")
 @Component
 @RestController
 @RequestMapping("/user")
@@ -54,7 +56,7 @@ public class BookingController
 		int noOfAdults=userDetails.getAdults();
 		int noOfChildren=userDetails.getChildren();
 		int totalPassengers=noOfAdults+noOfChildren;
-		restTemplate.getForObject("http://localhost:8081/admin/updateSeats/"+flightNo +"/"+totalPassengers, FlightDetails.class);
+		restTemplate.getForObject("http://localhost:8081/fare/updateSeats/"+flightNo +"/"+totalPassengers, FlightDetails.class);
 		return userService.addUserBookingDetails(userDetails);	
 	}
 	//Deleting flightTicket 

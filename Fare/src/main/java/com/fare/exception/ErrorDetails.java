@@ -1,6 +1,6 @@
 package com.fare.exception;
 /*
- * package com.example.AdminService.exception; import java.util.Date;
+ *
  * 
  * public class ErrorDetails { private Date timestamp; private String message;
  * private String details;

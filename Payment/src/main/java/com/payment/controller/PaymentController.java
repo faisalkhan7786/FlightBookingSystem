@@ -20,6 +20,7 @@ import com.payment.service.PaymentServiceImpl;
 
 import io.swagger.annotations.ApiOperation;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/pay")
 public class PaymentController 

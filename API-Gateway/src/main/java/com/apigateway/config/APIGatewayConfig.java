@@ -14,22 +14,22 @@ public class APIGatewayConfig {
 	{
 		return routeLocatorBuilder.routes()
 				.route(p ->p
-                        .path("/admin/all")
+                        .path("/fare/findAll")
                         .uri("http://localhost:8081"))
 				.route(p ->p
-						.path("/admin/{flightNo}")
+						.path("/fare/find/{flightNo}")
 						.uri("http://localhost:8081"))
 				.route(p ->p
-						.path("/admin/add")
+						.path("/fare/add")
 						.uri("http://localhost:8081"))
 				.route(p ->p
-						.path("/admin/update/{flightNo}")
+						.path("/fare/update/{flightNo}")
 						.uri("http://localhost:8081"))
 				.route(p ->p
-						.path("/admin/delete/{flightNo}")
+						.path("/fare/delete/{flightNo}")
 						.uri("http://localhost:8081"))
 				.route(p ->p
-						.path("/admin/updateSeats/{flightNo}/{noOfPassengers}")
+						.path("/fare/updateSeats/{flightNo}/{noOfPassengers}")
 						.uri("http://localhost:8081"))
 		       .build();
 	}
@@ -39,16 +39,16 @@ public class APIGatewayConfig {
 	{
 		return routeLocatorBuilder.routes()
 				.route(p ->p
-                        .path("/user/allflights")
+                        .path("/search/allflights")
                         .uri("http://localhost:8084"))
 				.route(p ->p
-                        .path("/user/status/{pnrNo}")
+                        .path("/search/status/{pnrNo}")
                         .uri("http://localhost:8084"))
 				.route(p ->p
-                        .path("/user/flightNo/{flightNo}")
+                        .path("/search/flightNo/{flightNo}")
                         .uri("http://localhost:8084"))
 				.route(p ->p
-                        .path("/user/{startPoint}/{endPoint}")
+                        .path("/search/findBy/{startPoint}/{endPoint}/{flightDate}")
                         .uri("http://localhost:8084"))
 		       .build();
 	}

@@ -1,6 +1,6 @@
 package com.fare.exception;
 /*
- * package com.example.AdminService.exception; import java.util.Date;
+ *
  * 
  * import org.springframework.http.HttpStatus; import
  * org.springframework.http.ResponseEntity; import

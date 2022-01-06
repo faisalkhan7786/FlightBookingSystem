@@ -1,6 +1,6 @@
 package com.fare.exception;
 /*
- * package com.example.AdminService.exception;
+ *
  * 
  * import org.springframework.http.HttpStatus; import
  * org.springframework.web.bind.annotation.ResponseStatus;

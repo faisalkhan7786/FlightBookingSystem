@@ -54,7 +54,16 @@ public class UserDetails
 	
 	private int adults;
 	private int children;
+	private String email;
 	
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	public int getAdults() {
 		return adults;
@@ -160,6 +169,9 @@ public class UserDetails
 		return SEQUENCE_NAME;
 	}
 
+	
+
+	
 	public UserDetails(@NotNull int id, @NotNull long pnrNo,
 			@NotNull @Size(min = 3, message = "Name should be minimum of 3 characters") String name,
 			@NotNull @Max(value = 99, message = "Age cannot be more than 99") int age,
@@ -168,7 +180,7 @@ public class UserDetails
 			@NotNull @Size(min = 2, message = "Start Point should be minimum of 2 characters") String startPoint,
 			@NotNull @Size(min = 2, message = "EndPoint Point should be minimum of 2 characters") String endPoint,
 			@NotNull @Size(min = 2, message = "Class type should be minimum of 2 characters") String classType,
-			@NotNull String payment, int adults, int children) {
+			@NotNull String payment, int adults, int children, String email) {
 		super();
 		this.id = id;
 		this.pnrNo = pnrNo;
@@ -182,16 +194,18 @@ public class UserDetails
 		this.payment = payment;
 		this.adults = adults;
 		this.children = children;
+		this.email = email;
 	}
+	
 
 	@Override
 	public String toString() {
 		return "UserDetails [id=" + id + ", pnrNo=" + pnrNo + ", name=" + name + ", age=" + age + ", sex=" + sex
 				+ ", flightNo=" + flightNo + ", startPoint=" + startPoint + ", endPoint=" + endPoint + ", classType="
-				+ classType + ", payment=" + payment + ", adults=" + adults + ", children=" + children + "]";
+				+ classType + ", payment=" + payment + ", adults=" + adults + ", children=" + children + ", email="
+				+ email + "]";
 	}
 
-	
 	public void setPnrNo() {			// 0 to 1
 		long number = (long) Math.floor(Math.random() * 9_000_000_000L) + 1_000_000_000L;
 		this.pnrNo = number;

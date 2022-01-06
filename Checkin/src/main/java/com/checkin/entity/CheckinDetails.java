@@ -40,9 +40,9 @@ public class CheckinDetails {
 	private String flightDate;
 
 	private String duration;
-	
 	@NotNull
 	@Size(max = 6, message = "Either male,female or other ")
+
 	private String sex;
 
 	@NotNull
@@ -52,6 +52,18 @@ public class CheckinDetails {
 	@NotNull
 	private String payment;
 	
+	@NotNull
+	private String email;
+	
+	
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	public int getSeatNo() {
 		return seatNo;
@@ -149,8 +161,6 @@ public class CheckinDetails {
 		this.payment = payment;
 	}
 
-	
-
 	public CheckinDetails(@NotNull long pnrNo, @NotNull int seatNo,
 			@NotNull @Size(min = 3, message = "Name should be minimum of 3 characters") String name,
 			@NotNull(message = "Flight number cannot be null") @Max(value = 99999, message = "Flight number cannot exceed 5 digits") int flightNo,
@@ -159,7 +169,7 @@ public class CheckinDetails {
 			String flightDate, String duration,
 			@NotNull @Size(max = 6, message = "Either male,female or other ") String sex,
 			@NotNull @Size(min = 2, message = "Class type should be minimum of 2 characters") String classType,
-			@NotNull String payment) {
+			@NotNull String payment, @NotNull String email) {
 		super();
 		this.pnrNo = pnrNo;
 		this.seatNo = seatNo;
@@ -173,15 +183,17 @@ public class CheckinDetails {
 		this.sex = sex;
 		this.classType = classType;
 		this.payment = payment;
+		this.email = email;
 	}
-
 	
+	
+
 	@Override
 	public String toString() {
 		return "CheckinDetails [pnrNo=" + pnrNo + ", seatNo=" + seatNo + ", name=" + name + ", flightNo=" + flightNo
 				+ ", startPoint=" + startPoint + ", endPoint=" + endPoint + ", deptTime=" + deptTime + ", flightDate="
 				+ flightDate + ", duration=" + duration + ", sex=" + sex + ", classType=" + classType
-				+ ", payment=" + payment + "]";
+				+ ", payment=" + payment + ", email=" + email + "]";
 	}
 
 	public CheckinDetails() {
